@@ -1,0 +1,21 @@
+Thiết kế sử dụng các màu sắc #F3EFE0; #434242; #222222; #22A39F
+Câu 1: HTML
+a. Tạo một trang HTML (cau1.html) cho một website thuê ô tô, tên của website là "Car Rental", tạp một header cho website với các thẻ phù hợp.
+b. Tạo một menu bao gồm: trang chủ; giới thiệu; chọn xe; trợ giúp; liên hệ cho website bằng cách sử dụng các thẻ <ul> <li>, đặt menu ở bên trong header nói trên.
+c. Thêm một bài viết giới thiệu về ô tô đang muốn cho thuê, trong đó có sử dụng các thẻ <h1>, <img>, <table> và các thẻ khác (nếu cần).
+Câu 2: CSS
+a. Tạo một trang HTML (cau2.html) trong đó có 5 phần tử <div>, các phần tử này có class là "item"
+b. Tạo một lớp CSS tên là "item" với độ rộng 200px, chiều cao 50px, có màu nền #222222
+c. Tạo một lớp CSS tên là "feature" với độ rộng 100%, chiều cao 200px, đường viền 2px. kiểu nét liền, có dùng màu nền và màu viền #22A39f
+Câu 3: Javascript
+a. Tạo chuỗi JSON chứa thông tin về 5 ô tô cho thuê, bao gồm các thuộc tính: loại xe, hãng xe, số chỗ, hình ảnh, giá thuê
+b. Sử dụng vòng lặp for để in ra các đối tượng trên ra trang html (cau3.html), thông tin mỗi đối tượng để trong một thẻ div.
+Câu 4:
+Kết hợp những mã đã viết ở các câu trên, chỉnh sửa nó để tạo thành một website hoàn thiện hơn, có tính thẩm mỹ, website có thiết kế đáp ứng và được lưu trong file cau4.html
+a. Website sử dụng header, menu trong câu 1 làm phần đầu của trang, bổ sung thêm slogan "Cùng bạn đến mọi hành trình" bên dưới tên website
+b. Sử dụng css "feature" Ở câu 2 để tạo một khối thông tin quảng cáo, khi người dùng di chuyển chuột qua thì màu nền và màu viền đổi thành #F3EFE0, phần chữ chuyển sang in nghiêng
+c. Sử dụng mã js hiển thị 5 thông tin về ô tô cho thuê đã khai báo trong câu 3, sử dụng class "item", sử dungj flexbox để cấu hình cho 4 "item" này xuất hiện trên 2 hàng, mỗi hàng 2 "item"
+d. Thiết kế thêm phần chân trang cho website, trong đó có thông tin: 
+- Họ tên: Trịnh Quỳnh Ly
+- Lớp: Khoa học máy tính 64
+- Mã sinh viên: 11224003

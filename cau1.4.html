@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3EFE0;
+            color: #434242;
+        }
+        header {
+            background-color: #22A39F;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .slogan {
+            font-style: italic;
+        }
+        .content {
+            padding: 20px;
+        }
+        .feature {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #22A39F;
+            background-color: #22A39F;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        .feature:hover {
+            background-color: #F3EFE0;
+            border-color: #F3EFE0;
+            color: #22A39F;
+            font-style: italic;
+        }
+        .car-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .item {
+            width: 200px;
+            height: 50px;
+            background-color: #222222;
+            color: #F3EFE0;
+            margin: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .car-item {
+            width: 45%;
+            border: 1px solid #434242;
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .car-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: #222222;
+            color: #F3EFE0;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Car Rental</h1>
+        <p class="slogan">Cùng bạn đến mọi hành trình</p>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Chọn xe</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="feature">Quảng cáo hấp dẫn</div>
+        <div class="car-list" id="car-list"></div>
+    </div>
+    <div class="footer">
+        <p>Họ tên: Trịnh Quỳnh Ly</p>
+        <p>Lớp: Khoa học máy tính 64</p>
+        <p>Mã sinh viên: 11224003</p>
+    </div>
+    <script>
+        const cars = [
+        {
+                type: "SUV",
+                brand: "Toyota",
+                seats: 7,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/toyota_yaris__2015/p/g/2024/01/05/17/j8yq8PuIKTmyyuOeiqbmHQ.jpg",
+                price: "1,000,000 VND/ngày"
+            },
+            {
+                type: "Sedan",
+                brand: "Honda",
+                seats: 5,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/kia_sorento_deluxe_2018/p/g/2024/02/01/07/WukVX0x4vCmIcqtFN5ikxQ.jpg",
+                price: "800,000 VND/ngày"
+            },
+            {
+                type: "Truck",
+                brand: "Ford",
+                seats: 2,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/kia_carnival_premium_2022/p/g/2023/09/18/02/-1hUYxYdKdt1e7d6vkni5Q.jpg",
+                price: "1,200,000 VND/ngày"
+            },
+            {
+                type: "Coupe",
+                brand: "BMW",
+                seats: 4,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/toyota_innova_2017/p/g/2024/04/01/15/Cy25OweKahE4ZZPhkxiNQw.jpg",
+                price: "1,500,000 VND/ngày"
+            },
+            {
+                type: "Convertible",
+                brand: "Audi",
+                seats: 4,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mg5_standard_2023/p/g/2023/07/05/15/5Pq8JshtWKSZAM5Mn04ZeA.jpg",
+                price: "1,800,000 VND/ngày"
+            }
+        ];
+
+        const carList = document.getElementById('car-list');
+        cars.forEach(car => {
+            const carDiv = document.createElement('div');
+            carDiv.className = 'car-item';
+            carDiv.innerHTML = `
+                <h2>${car.type}</h2>
+                <p>Hãng xe: ${car.brand}</p>
+                <p>Số chỗ: ${car.seats}</p>
+                <p>Giá thuê: ${car.price}</p>
+                <img src="${car.image}" alt="${car.type}">
+            `;
+            carList.appendChild(carDiv);
+        });
+    </script>
+</body>
+</html>

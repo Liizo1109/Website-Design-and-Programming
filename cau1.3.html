@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental JSON</title>
+    <style>
+        .car-item {
+            border: 1px solid #434242;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="car-list"></div>
+    <script>
+        const cars = [
+            {
+                type: "SUV",
+                brand: "Toyota",
+                seats: 7,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/toyota_yaris__2015/p/g/2024/01/05/17/j8yq8PuIKTmyyuOeiqbmHQ.jpg",
+                price: "1,000,000 VND/ngày"
+            },
+            {
+                type: "Sedan",
+                brand: "Honda",
+                seats: 5,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/kia_sorento_deluxe_2018/p/g/2024/02/01/07/WukVX0x4vCmIcqtFN5ikxQ.jpg",
+                price: "800,000 VND/ngày"
+            },
+            {
+                type: "Truck",
+                brand: "Ford",
+                seats: 2,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/kia_carnival_premium_2022/p/g/2023/09/18/02/-1hUYxYdKdt1e7d6vkni5Q.jpg",
+                price: "1,200,000 VND/ngày"
+            },
+            {
+                type: "Coupe",
+                brand: "BMW",
+                seats: 4,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/toyota_innova_2017/p/g/2024/04/01/15/Cy25OweKahE4ZZPhkxiNQw.jpg",
+                price: "1,500,000 VND/ngày"
+            },
+            {
+                type: "Convertible",
+                brand: "Audi",
+                seats: 4,
+                image: "https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_thue_xe_du_lich_hochiminh/mg5_standard_2023/p/g/2023/07/05/15/5Pq8JshtWKSZAM5Mn04ZeA.jpg",
+                price: "1,800,000 VND/ngày"
+            }
+        ];
+
+        const carList = document.getElementById('car-list');
+        for (let car of cars) {
+            const carDiv = document.createElement('div');
+            carDiv.className = 'car-item';
+            carDiv.innerHTML = `
+                <h2>${car.type}</h2>
+                <p>Hãng xe: ${car.brand}</p>
+                <p>Số chỗ: ${car.seats}</p>
+                <p>Giá thuê: ${car.price}</p>
+                <img src="${car.image}" alt="${car.type}" width="200">
+            `;
+            carList.appendChild(carDiv);
+        }
+    </script>
+</body>
+</html>
